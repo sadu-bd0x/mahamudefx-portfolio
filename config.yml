@@ -1,0 +1,145 @@
+# Update OWNER below with your GitHub username before using the CMS.
+backend:
+  name: github
+  repo: OWNER/mahamudefx-portfolio
+  branch: main
+  auth_methods: [token]
+
+media_folder: /assets/uploads
+public_folder: /assets/uploads
+
+site_url: https://mahamudefx.xyz
+display_url: https://mahamudefx.xyz
+
+collections:
+  - name: profile
+    label: Profile & Site Settings
+    files:
+      - name: profile
+        label: Personal Profile
+        file: content/profile.json
+        format: json
+        fields:
+          - { name: name, label: Full Name, widget: string }
+          - { name: brand, label: Brand / Logo Text, widget: string, required: false }
+          - { name: siteTitle, label: Browser Title, widget: string, required: false }
+          - { name: eyebrow, label: Small Intro Label, widget: string, required: false }
+          - { name: headline, label: Professional Headline, widget: string }
+          - { name: intro, label: Short Introduction, widget: text }
+          - { name: photo, label: Profile Photo, widget: image, required: false }
+          - { name: cv, label: CV / Resume File, widget: file, required: false }
+          - { name: availability, label: Availability Text, widget: string, required: false }
+          - { name: email, label: Email, widget: string, required: false }
+          - { name: location, label: Location, widget: string, required: false }
+          - { name: contactText, label: Contact Message, widget: text, required: false }
+          - name: socials
+            label: Social Links
+            widget: list
+            fields:
+              - { name: label, label: Platform, widget: string }
+              - { name: url, label: URL, widget: string }
+  - name: about
+    label: About Me
+    files:
+      - name: about
+        label: About Content
+        file: content/about.json
+        format: json
+        fields:
+          - { name: summary, label: Main Summary, widget: text }
+          - { name: details, label: Detailed Biography, widget: text }
+  - name: skills
+    label: Skills
+    file: content/skills.json
+    format: json
+    identifier_field: name
+    fields:
+      - { name: name, label: Skill Name, widget: string }
+      - { name: level, label: Level / Category, widget: string, required: false }
+  - name: projects
+    label: Projects
+    file: content/projects.json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Project Name, widget: string }
+      - { name: category, label: Category, widget: string, required: false }
+      - { name: description, label: Description, widget: text }
+      - { name: image, label: Cover Image, widget: image, required: false }
+      - { name: url, label: Project URL, widget: string, required: false }
+  - name: experience
+    label: Experience
+    file: content/experience.json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Job Title / Role, widget: string }
+      - { name: organization, label: Company / Organization, widget: string, required: false }
+      - { name: date, label: Date / Period, widget: string, required: false }
+      - { name: description, label: Description, widget: text, required: false }
+  - name: education
+    label: Education
+    file: content/education.json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Degree / Qualification, widget: string }
+      - { name: institution, label: Institution, widget: string, required: false }
+      - { name: date, label: Date / Period, widget: string, required: false }
+      - { name: description, label: Details, widget: text, required: false }
+  - name: achievements
+    label: Achievements
+    file: content/achievements.json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Achievement, widget: string }
+      - { name: category, label: Category, widget: string, required: false }
+      - { name: description, label: Description, widget: text, required: false }
+  - name: services
+    label: Services
+    file: content/services.json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Service Name, widget: string }
+      - { name: description, label: Description, widget: text }
+  - name: gallery
+    label: Gallery
+    file: content/gallery.json
+    format: json
+    identifier_field: caption
+    fields:
+      - { name: caption, label: Caption, widget: string, required: false }
+      - { name: image, label: Image, widget: image }
+  - name: blog
+    label: Blog Articles
+    file: content/blog.json
+    format: json
+    identifier_field: title
+    fields:
+      - { name: title, label: Article Title, widget: string }
+      - { name: date, label: Date, widget: datetime, required: false }
+      - { name: category, label: Category, widget: string, required: false }
+      - { name: description, label: Short Description, widget: text }
+      - { name: image, label: Cover Image, widget: image, required: false }
+      - { name: url, label: Article URL, widget: string, required: false }
+  - name: section_builder
+    label: Section Builder
+    files:
+      - name: sections
+        label: Custom Sections & Visibility
+        file: content/sections.json
+        format: json
+        fields:
+          - name: sections
+            label: Sections
+            widget: list
+            fields:
+              - { name: id, label: Section ID, widget: string }
+              - { name: eyebrow, label: Small Label, widget: string, required: false }
+              - { name: title, label: Heading, widget: string }
+              - { name: text, label: Text, widget: text, required: false }
+              - { name: image, label: Image, widget: image, required: false }
+              - { name: enabled, label: Visible, widget: boolean, default: true }
+              - { name: order, label: Display Order, widget: number, default: 1 }
