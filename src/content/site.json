@@ -1,0 +1,37 @@
+{
+  "name": "Golam Mahmud",
+  "nameBengali": "গোলাম মাহমুদ",
+  "eyebrow": "Mechanical engineer by training · Creative developer by curiosity",
+  "headline": "An Engineer’s Mind. A Developer’s Creativity.",
+  "subtitle": "I’m Golam Mahmud, a Diploma Mechanical Engineer with a passion for web design and development. I bring an engineering mindset and creative thinking together to build useful, engaging digital experiences.",
+  "heroImage": "/images/precision-study.svg",
+  "profileImage": "",
+  "aboutImage": "",
+  "aboutLead": "Engineering is how I think. Creativity is how I explore what’s possible.",
+  "aboutParagraphs": [
+    "I’m Golam Mahmud. I’ve completed a Diploma in Mechanical Engineering, and engineering remains my main professional passion and an important part of who I am.",
+    "Alongside it, I have a strong interest in web design and development. It’s a creative passion that lets me explore ideas and build useful digital experiences.",
+    "I’ve worked on a variety of website projects, including educational institution websites, personal portfolios, e-commerce websites, business websites, and landing pages. In every project, I value thoughtful design, usability, responsive experiences, and practical functionality."
+  ],
+  "aboutQuote": "Thoughtful by design. Practical by nature.",
+  "aboutHeading": "A little about the person behind the process.",
+  "skillsHeading": "A practice shaped by both sides.",
+  "projectsHeading": "Selected work, made with intention.",
+  "journeyHeading": "Always building on the foundation.",
+  "servicesHeading": "Ideas, shaped into experiences.",
+  "blogHeading": "Notes from the process.",
+  "galleryHeading": "Collected moments.",
+  "projectCategories": [
+    "Educational websites",
+    "Portfolio websites",
+    "E-commerce websites",
+    "Business websites",
+    "Landing pages"
+  ],
+  "contactHeading": "Let’s make something thoughtful.",
+  "contactDescription": "Have an idea, a question, or a project in mind? This is where the conversation begins.",
+  "email": "",
+  "phone": "",
+  "location": "",
+  "socialLinks": []
+}

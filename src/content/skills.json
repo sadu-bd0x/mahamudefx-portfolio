@@ -1,0 +1,16 @@
+[
+  { "name": "Web Design", "category": "Design", "published": true },
+  { "name": "UI/UX Design", "category": "Design", "published": true },
+  { "name": "Responsive Website Design", "category": "Design", "published": true },
+  { "name": "Landing Page Design", "category": "Design", "published": true },
+  { "name": "Logo Design", "category": "Design", "published": true },
+  { "name": "Graphic Design", "category": "Design", "published": true },
+  { "name": "Web Development", "category": "Development", "published": true },
+  { "name": "Frontend Development", "category": "Development", "published": true },
+  { "name": "HTML", "category": "Development", "published": true },
+  { "name": "CSS", "category": "Development", "published": true },
+  { "name": "JavaScript", "category": "Development", "published": true },
+  { "name": "E-commerce Website Design", "category": "Specialties", "published": true },
+  { "name": "Portfolio Website Development", "category": "Specialties", "published": true },
+  { "name": "Educational Website Development", "category": "Specialties", "published": true }
+]

@@ -1,0 +1,10 @@
+[
+  { "title": "Web Design", "description": "Clear, considered layouts that balance visual character with everyday usability.", "icon": "layout", "published": true },
+  { "title": "Website Development", "description": "Turning thoughtful concepts into practical, easy-to-navigate websites.", "icon": "code", "published": true },
+  { "title": "Responsive Design", "description": "Interfaces designed to feel at home on small screens and large ones alike.", "icon": "devices", "published": true },
+  { "title": "Landing Pages", "description": "Focused pages that help one clear idea make a strong first impression.", "icon": "pointer", "published": true },
+  { "title": "E-commerce Websites", "description": "Storefront experiences planned around clarity, trust, and ease of use.", "icon": "shop", "published": true },
+  { "title": "Portfolio Websites", "description": "Personal spaces that present someone’s work with care and personality.", "icon": "portfolio", "published": true },
+  { "title": "Educational Websites", "description": "Organized digital experiences for sharing information and learning resources.", "icon": "education", "published": true },
+  { "title": "Logo & Graphic Design", "description": "Visual explorations that bring a consistent identity to life.", "icon": "pen", "published": true }
+]

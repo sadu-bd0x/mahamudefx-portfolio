@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Portfolio Editor — Golam Mahmud</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="cms-config-url" href="/admin/config.json" type="application/json" />
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#f6f4ee;color:#192824;font-family:Arial,Helvetica,sans-serif}a{color:inherit}#setup{min-height:100vh;display:grid;place-items:center;padding:30px}#setup[hidden]{display:none}.setup-card{width:min(100%,720px);background:#fff;padding:clamp(30px,5vw,65px);border:1px solid #dadcd2;box-shadow:0 24px 60px rgba(25,40,36,.06)}.eyebrow{font-size:11px;font-weight:700;letter-spacing:.18em;color:#a8663e}.setup-card h1{font-size:clamp(38px,5vw,62px);letter-spacing:-.07em;line-height:1.04;font-weight:500;margin:24px 0}.setup-card p{color:#5c6860;line-height:1.7;font-size:15px;max-width:550px}.setup-card code{font-size:12px;background:#edf0e9;padding:3px 6px}.setup-card ol{padding-left:22px;color:#47584d;line-height:1.85;font-size:14px}.setup-card li{padding-left:5px;margin:8px 0}.setup-card a{display:inline-block;margin-top:22px;padding-bottom:7px;text-decoration:none;border-bottom:1px solid #192824;font-weight:700;font-size:13px}.setup-card a:hover{color:#a8663e;border-color:#a8663e}.setup-logo{font-size:24px;letter-spacing:-.1em;font-weight:700}.setup-logo span{color:#a8663e}.setup-status{font-size:13px}.setup-help[hidden]{display:none}@media(max-width:600px){#setup{padding:17px}.setup-card{padding:32px 25px}.setup-card h1{font-size:42px}}
+  </style>
+</head>
+<body>
+  <div id="setup">
+    <div class="setup-card">
+      <div class="setup-logo">G<span>/</span>M<span>.</span></div>
+      <p class="eyebrow">PRIVATE CONTENT EDITOR</p>
+      <h1>Make room for<br />what’s next.</h1>
+      <p id="setup-status" class="setup-status" role="status">Checking the editor connection…</p>
+      <div id="setup-help" class="setup-help" hidden>
+        <p>The portfolio is live, but its GitHub editing connection has not been configured yet. No repository or credentials have been guessed or exposed.</p>
+        <ol>
+          <li>Publish this code in your own GitHub repository and confirm its production branch.</li>
+          <li>Deploy the official Sveltia CMS Authenticator on Cloudflare Workers and set up a GitHub OAuth App.</li>
+          <li>Set <code>CMS_GITHUB_REPO</code>, <code>CMS_GITHUB_BRANCH</code>, and <code>CMS_AUTH_BASE_URL</code> in your hosting environment. Keep OAuth secrets in the Worker, never here.</li>
+          <li>Redeploy, then return to <code>/admin</code> to sign in with GitHub.</li>
+        </ol>
+        <a href="/">Return to portfolio ↗</a>
+      </div>
+    </div>
+  </div>
+  <noscript>JavaScript is required for the content editor. The public portfolio remains available without it.</noscript>
+  <script>
+    (async function () {
+      var status = document.getElementById('setup-status');
+      var help = document.getElementById('setup-help');
+      var setup = document.getElementById('setup');
+      try {
+        var response = await fetch('/admin/config.json', { cache: 'no-store' });
+        if (!response.ok) throw new Error('not-configured');
+        var config = await response.json();
+        if (!config.backend || !config.backend.repo || !config.backend.base_url) throw new Error('not-configured');
+        status.textContent = 'Opening the editor…';
+        var script = document.createElement('script');
+        script.src = 'https://unpkg.com/@sveltia/cms@0.256.1/dist/sveltia-cms.js';
+        script.integrity = 'sha384-LPT86oZkLhmoF84O1jKZBSaFJOVvKv8sjXDKap1SOaSwzbC8F6HH7rTJWekmAzG9';
+        script.crossOrigin = 'anonymous';
+        script.onload = function () { setup.hidden = true; };
+        script.onerror = function () { status.textContent = 'The editor could not be downloaded. Check your connection and try again.'; help.hidden = false; };
+        document.body.appendChild(script);
+      } catch (_) {
+        status.textContent = 'Editor setup is not complete yet.';
+        help.hidden = false;
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{
+  "sections": [
+    { "id": "about", "label": "About", "visible": true },
+    { "id": "skills", "label": "Expertise", "visible": true },
+    { "id": "projects", "label": "Work", "visible": true },
+    { "id": "journey", "label": "Journey", "visible": true },
+    { "id": "services", "label": "Services", "visible": true },
+    { "id": "blog", "label": "Journal", "visible": true },
+    { "id": "gallery", "label": "Gallery", "visible": true },
+    { "id": "contact", "label": "Contact", "visible": true }
+  ],
+  "showExperience": true,
+  "showEducation": true,
+  "showAchievements": true
+}
